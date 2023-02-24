@@ -1,15 +1,13 @@
 import { Container ,ThemeProvider} from "react-bootstrap";
-
+import Header from "./Header"
 function DefaultLayout({children}) {
     return ( <ThemeProvider
         breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
-        minBreakpoint="xxs"
-      >
-        <Container fluid>
-            <div>
+        minBreakpoint="xxs">
+            <Header/>
+            <div className="content" style={{marginTop:65}}>
             {children}
             </div>
-        </Container>
       </ThemeProvider>);
 }
 
