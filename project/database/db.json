@@ -1,8 +1,191 @@
 {
-    "slider":[
-        {
-            "id":1,
-            "title":"https://github.com/quangbmt114/Project_Duong/blob/main/project/src/images/honey2.JPG"
-        }
-    ]
+  "slider": [
+    {
+      "id": 1,
+      "title": "../src/images/ava1.png"
+    }
+  ],
+  "account": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin"
+    }
+  ],
+  "dataToken": [
+    {
+      "token": "c1f8415c740640a193d462d9d144a8bfb71785801038ed8e4858c24f89d9078e",
+      "timetoken": 1678207214051,
+      "account": "admin",
+      "id": 1
+    },
+    {
+      "token": "38322dba42a9445761c2f98f49c68e682348df33c0c78503ca217a6c93aa9a33",
+      "timetoken": 1678326348758,
+      "account": "admin",
+      "id": 2
+    },
+    {
+      "token": "f8f1ed07c712dc4502199a92ec4adc521d74e96fe6547873df2690b3bc4619b6",
+      "timetoken": 1678335687438,
+      "account": "admin",
+      "id": 3
+    },
+    {
+      "token": "a2b6080ef74aadd899962d8052c38541fe0936b4a29ec6c9feb6566c156365f3",
+      "timetoken": 1678621683475,
+      "account": "admin",
+      "id": 4
+    }
+  ],
+  "post": [
+    {
+      "id": 1,
+      "title": "Beland - 1023/5 Lê Văn Lương",
+      "address": "1023/5 Lê Văn Lương, X. Phước Kiến, H. Nhà Bè",
+      "district":"Huyện Nhà Bè",
+      "area": 20,
+      "bedroom": 1,
+      "toilet": 1,
+      "price": "3.800.000",
+      "images": [
+        "https://manage.beland.vn/Themes/Images/Department/1645260372.jpg"
+      ],
+      "check": true
+    },
+    {
+      "id": 2,
+      "title": "Beland - Thích Quảng Đức",
+      "address": "120/29/32 - 120/29/32A Thích Quảng Đức, P.4, Q. Phú Nhuận",
+      "area": 20,
+      "district":"Quận Phú Nhuận",
+      "bedroom": 1,
+      "toilet": 1,
+      "price": " 2.700.000",
+      "images": [
+        "https://manage.beland.vn/Themes/Images/Department/1659002197.jpg"
+      ],
+      "check": false
+    },
+    {
+      "id": 3,
+      "title": "Beland - 57/6i Điện Biên Phủ",
+      "address": "57/6i Điện Biên Phủ, P.15, Q. Bình Thạnh",
+      "area": 20,
+      "bedroom": 1,
+      "toilet": 1,
+      "price": "4.500.000",
+      "images": [
+        "https://manage.beland.vn/Themes/Images/Department/1659001531.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/D_1659001531718.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/A_1659001531716.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/B_1659001531717.jpeg"
+      ],
+      "check": true
+    },
+    {
+      "id": 4,
+      "title": "Beland - 347/6/27 Chu Văn An",
+      "address": "347/6/27 Chu Văn An, P.12, Q. Bình Thạnh",
+      "area": 20,
+      "bedroom": 1,
+      "toilet": 1,
+      "price": "4.500.000",
+      "images": [
+        "https://manage.beland.vn/Themes/Images/Department/1645260310.jpg"
+      ],
+      "check": false
+    },
+    {
+      "id": 5,
+      "title": "Beland Quận 2",
+      "address": "23 Đường 39, P. Bình Trưng Tây, Q2, HCM",
+      "area": 20,
+      "bedroom": 1,
+      "toilet": 1,
+      "price": "4.200.000",
+      "images": [
+        "https://manage.beland.vn/Themes/Images/Department/1664436005.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/A_1664436005513.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/D_1664436005526.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/C_1664436005522.jpg"
+      ],
+      "check": true
+    },
+    {
+      "id": 6,
+      "title": "Beland Quận 2",
+      "address": "23 Đường 39, P. Bình Trưng Tây, Q2, HCM",
+      "area": 20,
+      "bedroom": 1,
+      "toilet": 1,
+      "price": "4.200.000",
+      "images": [
+        "https://manage.beland.vn/Themes/Images/Department/1664436005.jpg"
+      ],
+      "check": true
+    },
+    {
+      "id": 7,
+      "title": "Beland Quận 2",
+      "address": "23 Đường 39, P. Bình Trưng Tây, Q2, HCM",
+      "area": 20,
+      "bedroom": 1,
+      "toilet": 1,
+      "price": "4.200.000",
+      "images": [
+        "https://manage.beland.vn/Themes/Images/Department/1664436005.jpg"
+      ],
+      "check": true
+    },
+    {
+      "id": 8,
+      "title": "Beland - 57/6i Điện Biên Phủ",
+      "address": "57/6i Điện Biên Phủ, P.15, Q. Bình Thạnh",
+      "area": 20,
+      "bedroom": 1,
+      "toilet": 1,
+      "price": "4.500.000",
+      "images": [
+        "https://manage.beland.vn/Themes/Images/Department/1659001531.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/D_1659001531718.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/A_1659001531716.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/B_1659001531717.jpeg"
+      ],
+      "check": true
+    }
+    ,
+    {
+      "id": 9,
+      "title": "Beland - 57/6i Điện Biên Phủ",
+      "address": "57/6i Điện Biên Phủ, P.15, Q. Bình Thạnh",
+      "area": 20,
+      "bedroom": 1,
+      "toilet": 1,
+      "price": "4.500.000",
+      "images": [
+        "https://manage.beland.vn/Themes/Images/Department/1659001531.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/D_1659001531718.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/A_1659001531716.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/B_1659001531717.jpeg"
+      ],
+      "check": true
+    },
+    {
+      "id": 10,
+      "title": "Beland - 57/6i Điện Biên Phủ",
+      "address": "57/6i Điện Biên Phủ, P.15, Q. Bình Thạnh",
+      "area": 20,
+      "bedroom": 1,
+      "toilet": 1,
+      "price": "4.500.000",
+      "images": [
+        "https://manage.beland.vn/Themes/Images/Department/1659001531.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/D_1659001531718.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/A_1659001531716.jpg",
+        "https://manage.beland.vn/Themes/Images/Department/B_1659001531717.jpeg"
+      ],
+      "check": true
+    }
+  ]
 }

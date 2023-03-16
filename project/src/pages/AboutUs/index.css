@@ -1,19 +1,5 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 /*noinspection ALL*/
-.checkbox-1{
-    display: flex; /* đặt hiển thị thành flex */
-    /* căn giữa theo chiều ngang */
-    align-items: center; /* căn giữa theo chiều dọc */
-    margin-bottom: 10px;
-    height: 30px;
-    font-family: sans-serif;
-    font-size: 1.1em;
-    font-weight: bold;
-}
+@charset "UTF-8";
 :root {
   --bs-blue: #009ef6;
   --bs-indigo: #6610f2;
@@ -47,17 +33,6 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: var(--bs-font-sans-serif);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #181C32;
-  background-color: #ffffff;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
 
 hr {
   margin: 1rem 0;
@@ -2462,7 +2437,7 @@ progress {
   font-weight: 500;
   line-height: 1.5;
   color: #181C32;
-  background-color: #bcbcbc;
+  background-color: #ffffff;
   background-clip: padding-box;
   border: 1px solid #E4E6EF;
   appearance: none;
@@ -2483,7 +2458,7 @@ progress {
 }
 .form-control:focus {
   color: #181C32;
-  background-color: #cbcbcb;
+  background-color: #ffffff;
   border-color: #B5B5C3;
   outline: 0;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 0 0.25rem rgba(0, 158, 247, 0.25);
@@ -10133,16 +10108,14 @@ textarea.form-control-lg {
   font-weight: 400 !important;
 }
 
-.fw-bold-500 {
+.fw-bold {
   font-weight: 500 !important;
 }
 
 .fw-bolder {
   font-weight: 600 !important;
 }
-.card{
-  border: 0;
-}
+
 .lh-0 {
   line-height: 0 !important;
 }
@@ -42088,7 +42061,7 @@ code:not([class*=language-]) {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* font-weight: 500; */
+  font-weight: 500;
   color: #3F4254;
   background-color: #F5F8FA;
   background-repeat: no-repeat;
@@ -45972,7 +45945,6 @@ code:not([class*=language-]) {
   margin: 0;
   display: flex;
   align-items: flex-start;
-  line-height: 40px;
 }
 .timeline .timeline-item:last-child .timeline-line {
   bottom: 100%;
@@ -47337,7 +47309,7 @@ canvas {
   }
 }
 body {
-  background-color: #F5F8FA;
+
 }
 
 .text-page-bg {
@@ -48057,8 +48029,3 @@ body {
 .docs-aside-menu .menu-item .menu-icon {
   justify-content: flex-start;
 }
-.hover-img{
-  object-fit: cover;
-  height: 400px;
-}
-

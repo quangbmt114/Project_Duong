@@ -1,0 +1,9 @@
+.slider1{
+    object-fit: cover;
+    height: calc(105vh - 65px );
+}
+.content-home-body-img{
+   max-width: 100%;
+   object-fit: contain;
+}
+

@@ -1,0 +1,41 @@
+.qr-brand-color
+{
+    color: #F0AF13!important;
+}
+
+.qr-brand-color-2
+{
+    color: rgba(7, 69, 107)!important;
+}
+
+.qr-no-gutter, .qr-no-gutter *
+{
+    --bs-gutter-x: 0!important;
+    --bs-gutter-y: 0!important;
+}
+
+.qr-bgc-white
+{
+    background-color: #FFF!important;
+    background-clip: content-box!important;
+}
+
+.qr-bg-brand-color
+{
+    background-color: rgba(240, 175, 19, 0.4)!important;
+}
+
+.qr-bg-brand-color-2
+{
+    background-color: rgba(7, 69, 107, 0.5)!important;
+}
+
+.qr-bga-brand-color
+{
+    background-color: rgba(240, 175, 19)!important;
+}
+
+.qr-bga-brand-color-2
+{
+    background-color: rgba(7, 69, 107)!important;
+}
