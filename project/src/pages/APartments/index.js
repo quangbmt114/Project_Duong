@@ -7,7 +7,6 @@ function Apartments() {
     const itemsPerPage = 6;
     const totalPages = Math.ceil(data.length / itemsPerPage);
     const [currentPage, setCurrentPage] = useState(1);
-  
     const handlePageChange = (pageNumber) => {
       setCurrentPage(pageNumber);
       
@@ -35,16 +34,19 @@ function Apartments() {
       if(district===""){
         const dataAPI = await axios.get("http://localhost:3000/post")
         setData(dataAPI.data)
+        setCurrentPage(1)
       }else{
-        const dataAPI = await axios.get(`http://localhost:3000/post?${"district="+district} `)
+        const dataAPI = await axios.get(`http://localhost:3000/post?district=${district} `)
         setData(dataAPI.data)
-        console.log(123);
+        setCurrentPage(1)
+
       }
       
       }
     const pagination = (data,page)=>{
             return (data.slice((page-1)*limitPage,page*limitPage))
     }
+
     useEffect(() => {
       fectBlog()
     }, []);
@@ -80,6 +82,7 @@ function Apartments() {
                             </Form>
                         </Row>
                     </div>
+                    
                        <Posts 
                         posts = {pagination(data,currentPage)}
                        />
