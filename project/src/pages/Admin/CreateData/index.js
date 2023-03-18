@@ -49,7 +49,7 @@ const MyModal = () => {
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleCloseModal}>
+                    <Button variant="secondary" onClick={()=>handleCloseModal}>
                         Close
                     </Button>
 

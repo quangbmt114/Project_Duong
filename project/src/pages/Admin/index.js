@@ -8,18 +8,24 @@ function ManagerCards() {
     const token = JSON.stringify(localStorage.getItem("token"));
     const token1 = token.replace(/[^a-zA-Z0-9]/g, "");
     const [post, setPost] = useState([]);
+    const [update, setUpdate] = useState(0)
+    const [currentPage, setCurrentPage] = useState(1);
+    const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
-    const [formData, setFormData] = useState({ name: '', email: '' });
+    const [formData, setFormData] = useState({ title: '', address: '' ,district:'',
+    area:0, bedroom:0,toilet:0,price:0,check:true
+});
+//giới hạn thành phần trong trang
+const itemsPerPage = 6;
+
     // data phân trang
-    const itemsPerPage = 6;
+    
     const totalPages = Math.ceil(post.length / itemsPerPage);
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
         
       };
-    const [update, setUpdate] = useState(0)
-    const [currentPage, setCurrentPage] = useState(1);
-    const navigate = useNavigate();
+  
     // check tìm kiếm
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -64,9 +70,20 @@ function ManagerCards() {
       );
     }
     //form Create data
-    const handleCloseModal = () => {
+    const handleClose=()=>{
+        setShowModal(false);
+    }
+    const handleCloseModal = async(event) => {
         // Xử lý dữ liệu nhập vào form ở đây
-        console.log(formData);
+        if(event.target.value=="true"){
+            const data = await axios.post(`http://localhost:3000/post`,formData)
+            setFormData({ title: '', address: '' ,district:'',
+            area:0, bedroom:0,toilet:0,price:0,check:true
+        })
+        alert("tạo mới thành công !!")
+        }
+       const createPost = await axios.get(`http://localhost:3000/post`)
+       setPost(createPost.data)
 
         // Đóng modal
         setShowModal(false);
@@ -75,7 +92,6 @@ function ManagerCards() {
     const handleShowModal = () => {
         // Mở modal
         setShowModal(true);
-        console.log(123);
     };
 
     const handleFormChange = (event) => {
@@ -105,50 +121,55 @@ function ManagerCards() {
         return (
             <div className="wrapper" style={{ marginTop: 50 }}>
              <>
-        <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal show={showModal}
+         onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>Modal Title</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
-                    <Form.Group controlId="formName">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" name="name" value={formData.name} onChange={handleFormChange} />
+                    <Form.Group controlId="formTitle">
+                        <Form.Label>title</Form.Label>
+                        <Form.Control type="text" name="title" value={formData.title} onChange={handleFormChange} />
                     </Form.Group>
 
                     <Form.Group controlId="formEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" value={formData.email} onChange={handleFormChange} />
+                        <Form.Label>Address</Form.Label>
+                        <Form.Control type="email" name="address" value={formData.address} onChange={handleFormChange} />
+                    </Form.Group>
+                    <Form.Group controlId="formDistrict">
+                        <Form.Label>district</Form.Label>
+                        <Form.Control type="email" name="district" value={formData.district} onChange={handleFormChange} />
                     </Form.Group>
                     <Form.Group controlId="formEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" value={formData.email} onChange={handleFormChange} />
+                        <Form.Label>Diện Tích</Form.Label>
+                        <Form.Control type="email" name="area" value={formData.area} onChange={handleFormChange} />
                     </Form.Group>
                     <Form.Group controlId="formEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" value={formData.email} onChange={handleFormChange} />
+                        <Form.Label>bedroom</Form.Label>
+                        <Form.Control type="email" name="email" value={formData.bedroom} onChange={handleFormChange} />
                     </Form.Group>
                     <Form.Group controlId="formEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" value={formData.email} onChange={handleFormChange} />
+                        <Form.Label>toilet</Form.Label>
+                        <Form.Control type="email" name="toilet" value={formData.toilet} onChange={handleFormChange} />
                     </Form.Group>
                     <Form.Group controlId="formEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" value={formData.email} onChange={handleFormChange} />
-                    </Form.Group>
-                    <Form.Group controlId="formEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" value={formData.email} onChange={handleFormChange} />
+                        <Form.Label>price</Form.Label>
+                        <Form.Control type="number" name="price" value={formData.price} onChange={handleFormChange} />
                     </Form.Group>
                 </Form>
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={handleCloseModal}>
+                <Button variant="secondary"
+                 value={false} 
+                 onClick={handleCloseModal}>
                     Close
                 </Button>
 
-                <Button variant="primary" onClick={handleCloseModal}>
+                <Button variant="primary"
+                value={true}
+                 onClick={handleCloseModal}>
                     Save Changes
                 </Button>
             </Modal.Footer>
@@ -183,8 +204,10 @@ function ManagerCards() {
                                     </Form>
                                 </Row>
                             </div>
-                            <Button variant="primary" onClick={handleShowModal}>
-            Thêm Data
+                            <Button variant="primary" 
+                            style={{margin:15}}
+                            onClick={handleShowModal}>
+           Tạo data mới
         </Button>
                             <Posts
                                 posts={pagination(post, currentPage)}
