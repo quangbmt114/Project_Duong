@@ -7,6 +7,8 @@ function Apartments() {
     const itemsPerPage = 6;
     const totalPages = Math.ceil(data.length / itemsPerPage);
     const [currentPage, setCurrentPage] = useState(1);
+   
+
     const handlePageChange = (pageNumber) => {
       setCurrentPage(pageNumber);
       

@@ -1,6 +1,10 @@
 import { Container, Card, Row, Col, Form, Button } from "react-bootstrap";
+import {useState} from 'react'
 import FormExample from "./FormSubmit_Home";
 function Content_Home() {
+    const [data,setData]=useState([])
+    //biến có tham số có sẵn
+    const limitPage = 6;
     const service =[{
             content:"Vị trí thuận tiện, di chuyển dễ dàng"
     }, {
@@ -15,6 +19,9 @@ function Content_Home() {
     content:"Giờ giấc tự do, tiện lợi công việc    "
 }
 ]
+const pagination = (data,page)=>{
+    return (data.slice((page-1)*limitPage,page*limitPage))
+}
     return (
         //begin ContenclassName
         <Container fluid className="content-body">
@@ -87,38 +94,16 @@ function Content_Home() {
                                 </Card.Body>
                             </Card>
                         </Col>
-                        <Col md="4">
-                            <Card >
-                                <Card.Img variant="top" style={{ height: 270, objectFit: "cover" }} src={require("../../../images/images_1.jpg")} />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col md="4">
-                            <Card >
-                                <Card.Img variant="top" style={{ height: 270, objectFit: "cover" }} src={require("../../../images/1659001531.jpg")} />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
                     </Row>
                 </Card.Body>
                 <Card.Body className="p-lg-17 pb-lg-0">
                     <Row>
                     <div className="col-md-4 d-flex ps-lg-10 align-items-center qr-contact-bg">
-                            <img src={require("../../../images/images_1.jpg")} style={{width:"100%",height:270,objectFit:"cover"}}/>
+                            <img 
+                            src={require("../../../images/images_1.jpg")} 
+                            style={{width:"100%",height:270,objectFit:"cover"}}
+
+                            />
                     </div>
                     <div className="col-md-8 pe-lg-10">
                         <div className="ps-4 row">

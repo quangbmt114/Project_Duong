@@ -41,10 +41,11 @@ const itemsPerPage = 6;
         }
     }
     // loading khi xóa
-    const handleReload = (id) => {
+    const handleReload = async(id) => {
         setUpdate(id)
-        const updatePost = post.filter((post) => post.id !== id);
-        setPost(updatePost);
+ const dataAPI = await axios.get("http://localhost:3000/post")
+        setPost(dataAPI.data);
+        
     };
     // tìm kiếm token khi đăng nhập
     const fectBlog = async () => {
@@ -77,7 +78,8 @@ const itemsPerPage = 6;
         // Xử lý dữ liệu nhập vào form ở đây
         if(event.target.value=="true"){
             const data = await axios.post(`http://localhost:3000/post`,formData)
-            setFormData({ title: '', address: '' ,district:'',
+            setFormData(
+                { title: '', address: '' ,district:'',
             area:0, bedroom:0,toilet:0,price:0,check:true
         })
         alert("tạo mới thành công !!")

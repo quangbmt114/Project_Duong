@@ -9,6 +9,7 @@ function Posts({ posts,onLoad}) {
   area:0, bedroom:0,toilet:0,price:0,check:true
 });
 const [id,setId]=useState(0)
+const [postData,setPostData]= useState([])
   const handleShowModal = async(x) => {
    
     // Mở modal
@@ -34,7 +35,9 @@ const handleFormChange = (event) => {
 }
   const handleCloseModal = async(event) => {
     // Xử lý dữ liệu nhập vào form ở đây
-      const data = await axios.put(`http://localhost:3000/post/${id}`,formData)
+      const data = await axios.patch(`http://localhost:3000/post/${id}`,formData)
+      console.log(data.data);
+           onLoad(id)
     // Đóng modal
     setShowModal(false);
 };

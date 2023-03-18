@@ -78,7 +78,13 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
   color: #181C32;
 }
-
+/* trang Detail */
+.waitting{
+  display: flex; /* đặt hiển thị thành flex */
+  justify-content: center; /* căn giữa theo chiều ngang */
+  align-items: center; /* căn giữa theo chiều dọc */
+  height: 80vh; /* đặt chiều cao của div là 100% chiều cao của viewport */
+}
 h1, .h1 {
   font-size: calc(1.3rem + 0.6vw);
 }
