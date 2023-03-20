@@ -24,6 +24,24 @@
       "timetoken": 1779105809679,
       "account": "admin",
       "id": 2
+    },
+    {
+      "token": "2e93bfce149b0507c78538aedf4fb1ef4f8941308b52054baa5bdbd1f0eaf047",
+      "timetoken": 1679158103326,
+      "account": "admin",
+      "id": 3
+    },
+    {
+      "token": "830f3366607ce65e7f68f6c6bf2d8dcba6087546bdec908b604c22ba8dd80f57",
+      "timetoken": 1679198490403,
+      "account": "admin",
+      "id": 4
+    },
+    {
+      "token": "d0bfed39eb1dbe1fb5680fe6b6caa2c3dbe6ac761bd352350abcc4d1efee4096",
+      "timetoken": 1679200723287,
+      "account": "admin",
+      "id": 5
     }
   ],
   "post": [
@@ -31,18 +49,19 @@
       "title": "Beland - 1023/5 Lê Văn Lương",
       "address": "1023/5 Lê Văn Lương, X. Phước Kiến, H. Nhà Bè",
       "district": "Huyện Nhà Bè",
-      "area": "202",
+      "area": "20",
       "bedroom": "12",
       "toilet": 1,
       "price": "3.800.000",
-      "image":"/images/Room_1/anh_1.jpg",
+      "image": "/images/Room_1/anh_1.jpg",
       "images": [
         "/images/Room_1/anh_1.jpg",
         "/images/Room_1/anh_2.jpg",
         "/images/Room_1/anh_3.jpg",
         "/images/Room_1/anh_4.jpg"
       ],
-      "id": 1
+      "id": 1,
+      "check": true
     },
     {
       "id": 2,
@@ -50,16 +69,17 @@
       "address": "120/29/32 - 120/29/32A Thích Quảng Đức, P.4, Q. Phú Nhuận",
       "area": "20",
       "district": "Quận Phú Nhuận",
-      "bedroom": 1,
-      "toilet": 1,
-      "price": " 2.700.000",
+      "bedroom": "2",
+      "toilet": "2",
+      "price": " 2.900.000",
       "image": "https://manage.beland.vn/Themes/Images/Department/1659002197.jpg",
       "images": [
         "https://manage.beland.vn/Themes/Images/Department/1659002197.jpg",
         "https://manage.beland.vn/Themes/Images/Department/D_1659001531718.jpg",
         "https://manage.beland.vn/Themes/Images/Department/B_1659001531717.jpeg",
         "https://manage.beland.vn/Themes/Images/Department/C_1659001531718.jpg"
-      ]
+      ],
+      "check": true
     },
     {
       "id": 4,
@@ -99,7 +119,7 @@
       "bedroom": 1,
       "toilet": 1,
       "price": "4.200.000",
-      "image":  "https://manage.beland.vn/Themes/Images/Department/1664436005.jpg",
+      "image": "https://manage.beland.vn/Themes/Images/Department/1664436005.jpg",
       "images": [
         "https://manage.beland.vn/Themes/Images/Department/1664436005.jpg"
       ],
@@ -113,7 +133,7 @@
       "bedroom": 1,
       "toilet": 1,
       "price": "4.500.000",
-      "image":"https://manage.beland.vn/Themes/Images/Department/1659001531.jpg",
+      "image": "https://manage.beland.vn/Themes/Images/Department/1659001531.jpg",
       "images": [
         "https://manage.beland.vn/Themes/Images/Department/1659001531.jpg",
         "https://manage.beland.vn/Themes/Images/Department/D_1659001531718.jpg",
@@ -162,7 +182,7 @@
       "bedroom": 1,
       "toilet": 1,
       "price": "4.500.000",
-      "image":"https://manage.beland.vn/Themes/Images/Department/A_1659001531716.jpg",
+      "image": "https://manage.beland.vn/Themes/Images/Department/A_1659001531716.jpg",
       "images": [
         "https://manage.beland.vn/Themes/Images/Department/A_1659001531716.jpg",
         "https://manage.beland.vn/Themes/Images/Department/D_1659001531718.jpg",
@@ -170,6 +190,5 @@
         "https://manage.beland.vn/Themes/Images/Department/B_1659001531717.jpeg"
       ]
     }
-  
   ]
 }

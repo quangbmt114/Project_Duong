@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useState } from 'react';
 
 function Header() {
   return (
@@ -25,9 +26,18 @@ function Header() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow pe-3" style={{lineHeight:"40px"}}>
-                 <Link to="/" style={{marginRight:10}}>Home</Link>
-                 <Link to="/aboutus"  style={{marginRight:10}}>About Us</Link>
-                 <Link to="/apartments">Apartments</Link>
+                  <div >
+                    <Link to="/"
+                     className={`menu-link active-header`}
+                    
+                      >Trang Chủ</Link>
+                  </div>
+                  <div>
+                    <Link to="/aboutus" className='menu-link' >Về Chúng Tôi</Link>
+                  </div>
+                  <div >
+                    <Link to="/apartments" className='menu-link'>Căn Hộ Cho Thuê</Link>
+                  </div>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

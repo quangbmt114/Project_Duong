@@ -41,9 +41,7 @@ function Apartments() {
         const dataAPI = await axios.get(`http://localhost:3000/post?district=${district} `)
         setData(dataAPI.data)
         setCurrentPage(1)
-
       }
-      
       }
     const pagination = (data,page)=>{
             return (data.slice((page-1)*limitPage,page*limitPage))

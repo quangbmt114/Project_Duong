@@ -1,10 +1,15 @@
-import { Container, Card, Row, Col, Form, Button } from "react-bootstrap";
-import {useState} from 'react'
+import { Container, Card, Row, Col, Form, Button,Pagination } from "react-bootstrap";
+import {useState,useEffect} from 'react'
+import axios from "axios";
 import FormExample from "./FormSubmit_Home";
+import Posts from "../../APartments/Posts";
 function Content_Home() {
     const [data,setData]=useState([])
+    const [currentPage, setCurrentPage] = useState(1);
     //biến có tham số có sẵn
-    const limitPage = 6;
+    const limitPage = 3;
+    const itemsPerPage = 3;
+    const totalPages = Math.ceil(data.length / itemsPerPage);
     const service =[{
             content:"Vị trí thuận tiện, di chuyển dễ dàng"
     }, {
@@ -22,6 +27,43 @@ function Content_Home() {
 const pagination = (data,page)=>{
     return (data.slice((page-1)*limitPage,page*limitPage))
 }
+const fectBlog = async()=>{
+    const dataAPI = await axios.get("http://localhost:3000/post")
+    setData(dataAPI.data)
+}
+// tìm kiếm phòng
+const handleSubmit =  async(event) => {
+    event.preventDefault();
+   const district= document.getElementById("district").value
+  if(district===""){
+    const dataAPI = await axios.get("http://localhost:3000/post")
+    setData(dataAPI.data)
+    setCurrentPage(1)
+  }else{
+    const dataAPI = await axios.get(`http://localhost:3000/post?district=${district} `)
+    setData(dataAPI.data)
+    setCurrentPage(1)
+  }
+  }
+const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+const pages = [];
+    for (let i = 1; i <= totalPages; i++) {
+      pages.push(
+        <Pagination.Item
+          key={i}
+          active={i === currentPage}
+          onClick={() => handlePageChange(i)}
+        >
+          {i}
+        </Pagination.Item>
+      );
+    }
+    useEffect(() => {
+        fectBlog()
+      }, []);
+  
     return (
         //begin ContenclassName
         <Container fluid className="content-body">
@@ -56,13 +98,13 @@ const pagination = (data,page)=>{
                     <div className="md-5" style={{ marginBottom: 20 }}>
                         <h3 className="fs-2hx text-dark mb-5">Căn Hộ Dịch Vụ DHome</h3>
                         <Row >
-                            <Form>
+                            <Form onSubmit={handleSubmit}>
                                 <div className="row d-flex justify-content-center fv-plugins-bootstrap5 fv-plugins-framework">
                                     <div className="col-12 mb-2 col-md-3 mb-md-0 col-lg-2">
-                                        <Form.Select aria-label="Default select example">
-                                            <option>Chọn Quận</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
+                                        <Form.Select aria-label="Default select example"  id="district">
+                                        <option value="">Chọn Quận</option>
+                                            <option value="Quận Phú Nhuận">Quận Phú Nhuận</option>
+                                            <option value="Huyện Nhà Bè">Huyện Nhà Bè</option>
                                             <option value="3">Three</option>
                                         </Form.Select>
                                     </div>
@@ -79,20 +121,14 @@ const pagination = (data,page)=>{
                             </Form>
                         </Row>
                     </div>
+                    <Posts
+                         posts = {pagination(data,currentPage)}
+                    />
+                </Card.Body>
+                <Card.Body>
                     <Row>
-                        <Col md="4">
-                            <Card >
-                                <Card.Img variant="top" style={{ height: 270, objectFit: "cover" }} src={require("../../../images/1659002197.jpg")} 
-                                className="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-225px" />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card>
+                        <Col>
+                        <Pagination>{pages}</Pagination>
                         </Col>
                     </Row>
                 </Card.Body>
