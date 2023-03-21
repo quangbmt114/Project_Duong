@@ -31,11 +31,11 @@ const itemsPerPage = 6;
         event.preventDefault();
         const district = document.getElementById("district").value
         if (district === "") {
-            const dataAPI = await axios.get("http://localhost:3000/post")
+            const dataAPI = await axios.get(process.env.REACT_APP_API+"/post")
             setPost(dataAPI.data)
             setCurrentPage(1)
         } else {
-            const dataAPI = await axios.get(`http://localhost:3000/post?district=${district} `)
+            const dataAPI = await axios.get(`${process.env.REACT_APP_API}/post?district=${district} `)
             setPost(dataAPI.data)
             setCurrentPage(1)
         }
@@ -43,15 +43,15 @@ const itemsPerPage = 6;
     // loading khi xóa
     const handleReload = async(id) => {
         setUpdate(id)
- const dataAPI = await axios.get("http://localhost:3000/post")
+ const dataAPI = await axios.get(process.env.REACT_APP_API+"/post")
         setPost(dataAPI.data);
         
     };
     // tìm kiếm token khi đăng nhập
     const fectBlog = async () => {
         try {
-            const data1 = await axios.get(`http://localhost:3000/dataToken?token=${token1}`);
-            const data = await axios.get(`http://localhost:3000/post`);
+            const data1 = await axios.get(`${process.env.REACT_APP_API}/dataToken?token=${token1}`);
+            const data = await axios.get(`${process.env.REACT_APP_API}/post`);
             setPost(data.data);
             setDataCheck(data1.data);
         } catch (error) {
@@ -77,14 +77,14 @@ const itemsPerPage = 6;
     const handleCloseModal = async(event) => {
         // Xử lý dữ liệu nhập vào form ở đây
         if(event.target.value=="true"){
-            const data = await axios.post(`http://localhost:3000/post`,formData)
+            const data = await axios.post(`${process.env.REACT_APP_API}/post`,formData)
             setFormData(
                 { title: '', address: '' ,district:'',
             area:0, bedroom:0,toilet:0,price:0,check:true
         })
         alert("tạo mới thành công !!")
         }
-       const createPost = await axios.get(`http://localhost:3000/post`)
+       const createPost = await axios.get(`${process.env.REACT_APP_API}/post`)
        setPost(createPost.data)
 
         // Đóng modal

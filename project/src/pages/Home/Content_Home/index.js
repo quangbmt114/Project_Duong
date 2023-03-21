@@ -28,7 +28,7 @@ const pagination = (data,page)=>{
     return (data.slice((page-1)*limitPage,page*limitPage))
 }
 const fectBlog = async()=>{
-    const dataAPI = await axios.get("http://localhost:3000/post")
+    const dataAPI = await axios.get(process.env.REACT_APP_API+"/post")
     setData(dataAPI.data)
 }
 // tìm kiếm phòng
@@ -36,11 +36,11 @@ const handleSubmit =  async(event) => {
     event.preventDefault();
    const district= document.getElementById("district").value
   if(district===""){
-    const dataAPI = await axios.get("http://localhost:3000/post")
+    const dataAPI = await axios.get(process.env.REACT_APP_API+"/post")
     setData(dataAPI.data)
     setCurrentPage(1)
   }else{
-    const dataAPI = await axios.get(`http://localhost:3000/post?district=${district} `)
+    const dataAPI = await axios.get(`${process.env.REACT_APP_API}/post?district=${district} `)
     setData(dataAPI.data)
     setCurrentPage(1)
   }

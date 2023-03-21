@@ -12,7 +12,7 @@ function Detail() {
     const { title } = useParams()
     
     const fectBlog = async () => {
-        const data = await axios.get(`http://localhost:3000/post/${title}`)
+        const data = await axios.get(`${process.env.REACT_APP_API}/post/${title}`)
         setData(data.data)
     }
     useEffect(() => {

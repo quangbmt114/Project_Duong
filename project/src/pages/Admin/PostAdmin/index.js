@@ -15,7 +15,7 @@ const [postData,setPostData]= useState([])
     // Mở modal
     setShowModal(true);
     setId(x)
-    const data = await axios.get(`http://localhost:3000/post/${x}`)
+    const data = await axios.get(`${process.env.REACT_APP_API}/post/${x}`)
     setFormData({ title: data.data.title, address: data.data.address 
       ,district:data.data.district,
     area:data.data.area, 
@@ -35,7 +35,7 @@ const handleFormChange = (event) => {
 }
   const handleCloseModal = async(event) => {
     // Xử lý dữ liệu nhập vào form ở đây
-      const data = await axios.patch(`http://localhost:3000/post/${id}`,formData)
+      const data = await axios.patch(`${process.env.REACT_APP_API}/post/${id}`,formData)
       console.log(data.data);
            onLoad(id)
     // Đóng modal
@@ -123,7 +123,7 @@ return(
                   <div>
                   <Button variant="danger" style={{marginRight:10}}
                   onClick={async () => {
-                      const response = await axios.delete(`http://localhost:3000/post/${items.id}`
+                      const response = await axios.delete(`${process.env.REACT_APP_API}/post/${items.id}`
                        
                       );
                       if (response) {

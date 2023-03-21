@@ -19,7 +19,7 @@ useEffect(() => {
     setPassword(e.target.value);
   };
   const fectBlog = async()=>{
-    const data1 = await axios.get("http://localhost:3000/account")
+    const data1 = await axios.get(process.env.REACT_APP_API+"/account")
     setData(data1.data[0])
   
   }
@@ -32,7 +32,7 @@ useEffect(() => {
     const token = sha256(`${username}${expirationTime}`).toString();
     // Store the token in local storage
     localStorage.setItem('token', token);
-    const putData = await axios.post("http://localhost:3000/dataToken",{token:token,
+    const putData = await axios.post(process.env.REACT_APP_API+"/dataToken",{token:token,
     timetoken:expirationTime,account:username
   })
       console.log(putData);
