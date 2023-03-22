@@ -101,21 +101,22 @@ const pages = [];
                             <Form onSubmit={handleSubmit}>
                                 <div className="row d-flex justify-content-center fv-plugins-bootstrap5 fv-plugins-framework">
                                     <div className="col-12 mb-2 col-md-3 mb-md-0 col-lg-2">
-                                        <Form.Select aria-label="Default select example"  id="district">
+                                        <Form.Select aria-label="Default select example"  id="district"  style={{height:"100%"}}>
                                         <option value="">Chọn Quận</option>
                                             <option value="Quận Phú Nhuận">Quận Phú Nhuận</option>
                                             <option value="Huyện Nhà Bè">Huyện Nhà Bè</option>
                                             <option value="3">Three</option>
                                         </Form.Select>
                                     </div>
-                                    <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
-                                        <Form.Control type="text" placeholder="Giá thấp nhất" />
+                                    <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid" 
+                                    >
+                                        <Form.Control type="text" placeholder="Giá thấp nhất" style={{height:"100%"}}/>
                                     </div>
-                                    <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
-                                        <Form.Control type="text" placeholder="Giá cao nhất" />
+                                    <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid" >
+                                        <Form.Control type="text" placeholder="Giá cao nhất" style={{height:"100%"}} />
                                     </div>
                                     <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid" width="100%">
-                                        <Button type="submit">Tìm Kiếm</Button>
+                                        <Button type="submit" className="col-lg-12" >Tìm Kiếm</Button>
                                     </div>
                                 </div>
                             </Form>
@@ -137,9 +138,7 @@ const pages = [];
                     <div className="col-md-4 d-flex ps-lg-10 align-items-center qr-contact-bg">
                             <img 
                             src={require("../../../images/images_1.jpg")} 
-                            style={{width:"100%",height:270,objectFit:"cover"}}
-
-                            />
+                            style={{width:"100%",height:270,objectFit:"cover"}} />
                     </div>
                     <div className="col-md-8 pe-lg-10">
                         <div className="ps-4 row">
@@ -188,16 +187,15 @@ const pages = [];
                     </Row>
                 </Card.Body>
                 <Card.Body>
-                        <div className="card-body p-lg-17 pb-lg-0">
-                            <div className="row mb-18">
-                                <div className="col-12">
+                        <div >
+                                <div className="col-lg-12 col-md-12 col-xm-12">
                                     <h3 className="fs-2hx text-dark mb-5">Hệ Thống Căn Hộ Dịch Vụ Beland</h3>
                                 </div>
                                 <div className="row d-flex justify-content-center qr-map-list" style={{height:600,overflow:"hidden"} }>
-                                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AY88kYxDxNEWGwZ3q3QrV8z4MmkkHas&ehbc=2E312F" width="100%" height="600px"></iframe>
+                                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AY88kYxDxNEWGwZ3q3QrV8z4MmkkHas&ehbc=2E312F"
+                                 width="100%" height="100%" ></iframe>
                                 </div>
                             </div>
-                        </div>
                         </Card.Body>
                     <Card.Body className="p-lg-17 pb-lg-0">
                                 <Row>

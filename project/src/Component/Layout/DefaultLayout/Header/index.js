@@ -21,9 +21,8 @@ function Header() {
       {[ 'xl'].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3" fixed="top">
           <Container >
-            <Navbar.Brand ><Link to="/">Logo</Link></Navbar.Brand>
+            <Navbar.Brand ><a href='/'>123</a></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            
                 <Navbar.Offcanvas
               
               id={`offcanvasNavbar-expand-${expand}`}

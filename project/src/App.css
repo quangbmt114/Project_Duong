@@ -100,6 +100,10 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
  color: #009EF7;
  background-color: rgb(234, 233, 233);
 }
+/* trang home*/
+iframe {
+  transform: scale(1.2);
+}
 /* trang Detail */
 .waitting{
   display: flex; /* đặt hiển thị thành flex */

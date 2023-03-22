@@ -62,7 +62,7 @@ function Apartments() {
                             <Form onSubmit={handleSubmit}>
                                 <div className="row d-flex justify-content-center fv-plugins-bootstrap5 fv-plugins-framework">
                                     <div className="col-12 mb-2 col-md-3 mb-md-0 col-lg-2">
-                                        <Form.Select aria-label="Default select example" id="district">
+                                        <Form.Select aria-label="Default select example" id="district" style={{height:"100%"}}>
                                             <option value="">Chọn Quận</option>
                                             <option value="Quận Phú Nhuận">Quận Phú Nhuận</option>
                                             <option value="Huyện Nhà Bè">Huyện Nhà Bè</option>
@@ -70,13 +70,13 @@ function Apartments() {
                                         </Form.Select>
                                     </div>
                                     <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
-                                        <Form.Control type="text" placeholder="Giá thấp nhất" />
+                                        <Form.Control type="text" placeholder="Giá thấp nhất" style={{height:"100%"}}/>
                                     </div>
                                     <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
-                                        <Form.Control type="text" placeholder="Giá cao nhất" />
+                                        <Form.Control type="text" placeholder="Giá cao nhất"style={{height:"100%"}} />
                                     </div>
                                     <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid" width="100%">
-                                        <Button type="submit">Tìm Kiếm</Button>
+                                        <Button type="submit" className="col-lg-12">Tìm Kiếm</Button>
                                     </div>
                                 </div>
                             </Form>
