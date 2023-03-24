@@ -5,6 +5,16 @@
       "title": "../src/images/ava1.png"
     }
   ],
+  "requests":[
+    {
+      "id":1,
+      "name":"Nguyễn Viết Quang",
+      "phone":"0336696456",
+      "email":"quangbmt1b@gmail.com",
+      "area_rent":"Quận 2",
+      "notes":""
+    }
+  ],
   "account": [
     {
       "id": 1,

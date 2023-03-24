@@ -38,12 +38,12 @@ function FormExample() {
         <Form noValidate onSubmit={handleSubmit}>
         <h3 className='fs-1 text-dark mb-4' >Tư Vấn Miễn Phí</h3>
           <Row className="mb-3">
-            <Form.Group as={Col} md="6" controlId="validationFormik01">
-              <Form.Label>First name</Form.Label>
+            <Form.Group as={Col} md="6" controlId="validationName">
+              <Form.Label>Họ và tên</Form.Label>
               <Form.Control className="form-control form-control-solid"
                 type="text"
                 placeholder="Nhập Họ và Tên"
-                name="firstName"
+                name="name"
                 value={values.firstName}
                 onChange={handleChange}
                 isInvalid={!!errors.firstName}
@@ -51,7 +51,7 @@ function FormExample() {
               <Form.Control.Feedback type="invalid">Looks good!</Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="6" controlId="validationFormik02">
-              <Form.Label>Last name</Form.Label>
+              <Form.Label>SĐT Liên Hệ</Form.Label>
               <Form.Control className="form-control form-control-solid"
                 type="text"
                 placeholder="Nhập SĐT Liên Hệ"
@@ -64,7 +64,7 @@ function FormExample() {
               <Form.Control.Feedback type="invalid">Looks good!</Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="6" controlId="validationFormikUsername">
-              <Form.Label>Username</Form.Label>
+              <Form.Label>Email liên hệ (Nếu có)</Form.Label>
               <InputGroup hasValidation>
                 
                 <Form.Control className="form-control form-control-solid"
@@ -82,7 +82,7 @@ function FormExample() {
               </InputGroup>
             </Form.Group>
             <Form.Group as={Col} md="6" controlId="validationFormik03">
-              <Form.Label>City</Form.Label>
+              <Form.Label>Khu vực bạn muốn thuê</Form.Label>
               <Form.Control className="form-control form-control-solid"
                 type="text"
                 placeholder="City"
@@ -100,7 +100,7 @@ function FormExample() {
           <Row className="mb-3">
             
             <Form.Group as={Col} md="12" controlId="validationFormik04">
-              <Form.Label>State</Form.Label>
+              <Form.Label>Ghi chú Khác</Form.Label>
               <Form.Control as="textarea" rows={6} className="form-control form-control-solid"
                 type="text"
                 placeholder="State"
