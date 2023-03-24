@@ -30,19 +30,51 @@ function Apartments() {
         const dataAPI = await axios.get(process.env.REACT_APP_API+"/post")
         setData(dataAPI.data)
     }
-    const handleSubmit =  async(event) => {
-        event.preventDefault();
-       const district= document.getElementById("district").value
-      if(district===""){
-        const dataAPI = await axios.get(process.env.REACT_APP_API+"/post")
-        setData(dataAPI.data)
-        setCurrentPage(1)
-      }else{
-        const dataAPI = await axios.get(`${process.env.REACT_APP_API}/post?district=${district} `)
-        setData(dataAPI.data)
-        setCurrentPage(1)
-      }
-      }
+ // tìm kiếm phòng
+ const handleSubmit = async (event) => {
+  event.preventDefault();
+  // lấy dữ liệu form district
+  const district = document.getElementById("district").value
+  // lấy dữ liệu form sort
+  const sort = document.getElementById("sort").value
+  // láy dữ liệu
+  if (district === "" && sort === "") {
+      const dataAPI = await axios.get(`${process.env.REACT_APP_API}/post`)
+      setData(dataAPI.data)
+      setCurrentPage(1)
+  } 
+  //tìm kiếm theo quận
+   if (district !=="" && sort === "") {
+      const dataAPI = await axios.get(`${process.env.REACT_APP_API}/post?district=${district} `)
+      setData(dataAPI.data)
+      setCurrentPage(1)
+  }
+  // sắp xếp giảm dần
+  if(district ==="" && sort === "priceUp"){
+      const dataAPI = await axios.get(`${process.env.REACT_APP_API}/post?_sort=price&_oder=asc,desc`)
+      setData(dataAPI.data)
+      setCurrentPage(1)
+  }
+  //sắp xếp tăng dần
+  if(district ==="" && sort === "priceDown"){
+      const dataAPI = await axios.get(`${process.env.REACT_APP_API}/post?_sort=price&_order=desc`)
+      setData(dataAPI.data)
+      setCurrentPage(1)
+  }
+  // sắp xếp giảm dần theo quận
+  if(district !=="" && sort === "priceDown"){
+      const dataAPI = await axios.get(`${process.env.REACT_APP_API}/post?district=${district}&_sort=price&_order=desc`);
+      setData(dataAPI.data)
+      setCurrentPage(1)
+  }
+          // sắp xếp tăng dần theo quận
+  if(district !=="" && sort === "priceUp"){
+      const dataAPI = await axios.get(`${process.env.REACT_APP_API}/post?district=${district}&_sort=price&_order=asc`);
+      setData(dataAPI.data)
+      setCurrentPage(1)
+  }
+
+}
     const pagination = (data,page)=>{
             return (data.slice((page-1)*limitPage,page*limitPage))
     }
@@ -69,11 +101,12 @@ function Apartments() {
                                             <option value="3">Three</option>
                                         </Form.Select>
                                     </div>
-                                    <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
-                                        <Form.Control type="text" placeholder="Giá thấp nhất" style={{height:"100%"}}/>
-                                    </div>
-                                    <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
-                                        <Form.Control type="text" placeholder="Giá cao nhất"style={{height:"100%"}} />
+                                    <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid" width="100%">
+                                        <Form.Select aria-label="Default select example" id="sort" style={{ height: "100%" }}>
+                                            <option value="">Sắp Xếp</option>
+                                            <option value="priceDown">Từ Cao đến thấp</option>
+                                            <option value="priceUp">từ thấp tới cao</option>
+                                        </Form.Select>
                                     </div>
                                     <div className="fv-row col-12 mb-2 col-md-3 mb-md-0 col-lg-2 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid" width="100%">
                                         <Button type="submit" className="col-lg-12">Tìm Kiếm</Button>

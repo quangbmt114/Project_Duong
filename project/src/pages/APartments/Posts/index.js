@@ -8,7 +8,7 @@ if(posts){
   return(
     <Row>
           {posts.map((items,index)=>{
-            {console.log("images",items.images)}
+            
          return(
            <Col md="4" key={index}>
              <Card border="0" >
@@ -29,7 +29,7 @@ if(posts){
                  </Card.Text>
                  <div className="fs-4 mt-4 d-flex flex-stack">
                    <div className="badge border-dashed fs-2 fw-bolder text-dark p-2 ">
-                     <span style={{ fontSize: 16, position: "relative", top: -3 }}>Chỉ từ</span> {items.price}
+                     <span style={{ fontSize: 16, position: "relative", top: -3 }}>Chỉ từ</span> { new Intl.NumberFormat('vi-VN').format(items.price)}
                    </div>
                    { 
                      <Link to={`/detail/${items.id}`}>
