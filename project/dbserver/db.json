@@ -5,14 +5,14 @@
       "title": "../src/images/ava1.png"
     }
   ],
-  "requests":[
+  "requests": [
     {
-      "id":1,
-      "name":"Nguyễn Viết Quang",
-      "phone":"0336696456",
-      "email":"quangbmt1b@gmail.com",
-      "area_rent":"Quận 2",
-      "notes":""
+      "id": 1,
+      "name": "Nguyễn Viết Quang",
+      "phone": "0336696456",
+      "email": "quangbmt1b@gmail.com",
+      "area_rent": "Quận 2",
+      "notes": ""
     }
   ],
   "account": [
@@ -52,6 +52,12 @@
       "timetoken": 1679200723287,
       "account": "admin",
       "id": 5
+    },
+    {
+      "token": "7e209c123c0055fd043e798edf9eb73b8c9389fa11f4de2d52c499d2362eded1",
+      "timetoken": 1683654764512,
+      "account": "admin",
+      "id": 6
     }
   ],
   "post": [
@@ -99,7 +105,7 @@
       "district": "Quận Phú Nhuận",
       "bedroom": 1,
       "toilet": 1,
-      "price":4400000,
+      "price": 4400000,
       "image": "https://manage.beland.vn/Themes/Images/Department/1645260310.jpg",
       "images": [
         "https://manage.beland.vn/Themes/Images/Department/1645260310.jpg",
@@ -143,7 +149,7 @@
       "area": 20,
       "bedroom": 1,
       "toilet": 1,
-      "price":4500000,
+      "price": 4500000,
       "image": "https://manage.beland.vn/Themes/Images/Department/1659001531.jpg",
       "images": [
         "https://manage.beland.vn/Themes/Images/Department/1659001531.jpg",
