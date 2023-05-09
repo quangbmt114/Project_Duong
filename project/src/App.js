@@ -5,7 +5,6 @@ import './color.css'
 import DefaultLayout from './Component/Layout/DefaultLayout';
 
 function App() {
-  console.log(process.env.REACT_APP_API)
   return (
     <Router>
       <div className='App'>

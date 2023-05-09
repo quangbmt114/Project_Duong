@@ -21,8 +21,7 @@ function FormExample() {
               if(handleDataForm!=null){
                 const dataAPI = await axios.post(`${process.env.REACT_APP_API}/requests`,handleDataForm)
                 alert("Gửi yêu cầu tư vấn thành công !!")
-              }
-              
+              }   
             }
             useEffect(() => {
              handleSubForm()
