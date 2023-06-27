@@ -33,7 +33,18 @@ function AboutUs() {
             </Card>
         </Container>
         <Content_body/>
-       
+        <Container fluid>
+                <Card style={{border:0}}>
+                    <Card.Body className=" p-lg-17 pb-lg-0" style={{border:"0px"}}>
+                        <div className="mb-18">
+                        <div className="mb-12">
+									<h3 className="fs-2hx text-dark mb-5">Beland Team</h3>
+								</div>
+                                <CardSlider/>
+                        </div>
+                    </Card.Body>
+                </Card>
+        </Container>
 			</div>
 
     );

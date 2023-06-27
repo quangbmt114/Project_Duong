@@ -5,7 +5,7 @@ function DefaultLayout({children}) {
         breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
         minBreakpoint="xxs">
             <Header/>
-            <div className="content" style={{padding:0}} >
+            <div className="content" >
             {children}
             </div>
       </ThemeProvider>);
