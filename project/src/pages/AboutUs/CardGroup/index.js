@@ -8,7 +8,7 @@ function CardGroups() {
                 <Row>
                     <Col md={4} >
                         <Card style={{ width: '100%',border:0 }}>
-                            <Card.Img variant="top" src="/images/2.jpg" className="hover-img" height={400}/>
+                            <Card.Img variant="top" src="/images/3.png" className="hover-img" height={400}/>
                             <Card.Body>
                                 <Card.Title>Đa Dạng Trị Ví & Sản Phẩm</Card.Title>
                                 <Card.Text>
@@ -32,7 +32,7 @@ function CardGroups() {
                     </Col>
                     <Col md={4}>
                         <Card style={{ width: '100%',border:0 }}>
-                            <Card.Img variant="top" src="/images/1.png" className="hover-img"/>
+                            <Card.Img variant="top" src="/images/3.png" className="hover-img"/>
                             <Card.Body>
                                 <Card.Title>Kiến Tạo Cảm Hứng Sống</Card.Title>
                                 <Card.Text>

@@ -1,17 +1,15 @@
 .login-form {
-  background: url("/public/images/background-login.png"), lightgray 50% / cover;
-  width: 100%;  
-  display: flex;
+    display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    height: 100vh;
+    height: 80vh;
     margin: 0 auto;
   }
 
 
   .login-form h2 {
-    font-size: 50px;
+    font-size: 24px;
     margin-bottom: 20px;
   }
   
@@ -26,7 +24,7 @@
     padding: 10px;
     margin-bottom: 20px;
     font-size: 18px;
-    border: 1px #007bff solid;
+    border: none;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
@@ -48,14 +46,4 @@
   .login-form button:hover {
     background-color: #0069d9;
   }
-  /*box form-submit */
-  .form-submit-login{
-    width: 40%;
-    background: #FFF;
-    padding: 2%;
-    border-radius: 20px;
-    
-  }
-  .text-input{
-    width: 100%;
-  }
+  
