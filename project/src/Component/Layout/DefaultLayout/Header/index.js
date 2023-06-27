@@ -10,7 +10,8 @@ function Header() {
   const items = [
     { id: 1, text: 'Trang Chủ' ,path:'/' },
     { id: 2, text: 'Về Chúng Tôi',path:'/aboutus'  },
-    { id: 3, text: 'Căn Hộ Cho Thuê' ,path:'/apartments' }
+    { id: 3, text: 'Căn Hộ Cho Thuê' ,path:'/apartments' },
+    { id: 4, text: 'Quản lý phòng cho thuê' ,path:'/managercards' }
   ];
   const handleChangePage =(item)=>{
       setCheck(item)
@@ -48,6 +49,7 @@ function Header() {
                      </Link>
                   )
                       })}
+                      
                   </div>
                 </Nav>
               </Offcanvas.Body>
