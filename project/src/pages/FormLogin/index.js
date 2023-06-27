@@ -32,6 +32,7 @@ const Login = () => {
       const token = sha256(`${username}${expirationTime}`).toString();
       // Store the token in local storage
       localStorage.setItem("token", token);
+      sessionStorage.setItem("login",true);
       const putData = await axios.post(
         process.env.REACT_APP_API + "/dataToken",
         { token: token, timetoken: expirationTime, account: username }
@@ -39,6 +40,7 @@ const Login = () => {
       console.log(putData);
       // Set the logged in state to true
       setIsLoggedIn(true);
+      
       navigate("/managercards");
     } else {
       setErrorMessage('Sai tên đăng nhập hoặc mật khẩu.');

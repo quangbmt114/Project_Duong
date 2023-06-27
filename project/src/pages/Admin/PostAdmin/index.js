@@ -10,7 +10,7 @@ function Posts({ posts, onLoad }) {
     title: "",
     address: "",
     image:"",
-    images:"",
+    images:[],
     district: "",
     area: 0,
     bedroom: 0,
@@ -75,7 +75,7 @@ function Posts({ posts, onLoad }) {
             </Form.Group>
             <Form.Group controlId="formAddress">
               <Form.Label>Hình ảnh thêm của phòng</Form.Label>
-              <Form.Control type="text" name="images" value={formData.images} onChange={handleFormChange} />
+              <Form.Control as="textarea" rows={4} name="images" value={formData.images} onChange={handleFormChange} />
             </Form.Group>
             <Form.Group controlId="formDistrict">
               <Form.Label>District</Form.Label>
@@ -121,7 +121,7 @@ function Posts({ posts, onLoad }) {
               variant="top"
               style={{ height: 270, objectFit: "cover" }}
               className="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-225px"
-              src={item.images}
+              src={item.image}
             />
             <Card.Body>
               <Card.Title>{item.title}</Card.Title>
